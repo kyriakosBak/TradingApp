@@ -1,0 +1,40 @@
+{
+	"Name": "EC2 estimate",
+	"Total Cost": {
+		"monthly": "9.88",
+		"upfront": "0.00",
+		"12 months": "118.56"
+	},
+	"Metadata": {
+		"Currency": "USD",
+		"Locale": "en_US",
+		"Created On": "06/11/2023",
+		"Legal Disclaimer": "AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services.",
+		"Share Url": "https://calculator.aws/#/estimate?id=d50962ae707676176d9fe07ea912ea0b7e5e48d4"
+	},
+	"Groups": {
+		"Services": [
+			{
+				"Service Name": "Amazon EC2 ",
+				"Region": "Europe (Frankfurt)",
+				"Status": "",
+				"Service Cost": {
+					"monthly": "9.88",
+					"upfront": "0.00",
+					"12 months": "118.56"
+				},
+				"Properties": {
+					"Tenancy": "Shared Instances",
+					"Operating system": "Linux",
+					"Workload": "Consistent, Number of instances: 1",
+					"Advance EC2 instance": "t2.micro",
+					"Pricing strategy": "Spot Discount: -1",
+					"Enable monitoring": "disabled",
+					"DT Inbound: Not selected": "0 TB per month",
+					"DT Outbound: Not selected": "0 TB per month",
+					"DT Intra-Region:": "0 TB per month"
+				}
+			}
+		]
+	}
+}
