@@ -1,34 +1,50 @@
 {
-	"Name": "EC2 estimate",
+	"Name": "My Estimate",
 	"Total Cost": {
-		"monthly": "9.88",
+		"monthly": "10.73",
 		"upfront": "0.00",
-		"12 months": "118.56"
+		"12 months": "128.76"
 	},
 	"Metadata": {
 		"Currency": "USD",
 		"Locale": "en_US",
-		"Created On": "06/11/2023",
+		"Created On": "11/7/2023",
 		"Legal Disclaimer": "AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services.",
-		"Share Url": "https://calculator.aws/#/estimate?id=d50962ae707676176d9fe07ea912ea0b7e5e48d4"
+		"Share Url": "https://calculator.aws/#/estimate?id=abb2a45074332265f119a63ada09025e81d19b0c"
 	},
 	"Groups": {
 		"Services": [
+			{
+				"Service Name": "Amazon Elastic Block Store (EBS)",
+				"Region": "Europe (Frankfurt)",
+				"Status": "",
+				"Service Cost": {
+					"monthly": "0.95",
+					"upfront": "0.00",
+					"12 months": "11.40"
+				},
+				"Properties": {
+					"Number of volumes": "1",
+					"Average duration each instance runs": "730 hours per month",
+					"Storage amount per volume": "8 GB",
+					"Snapshot Frequency": "No snapshot storage"
+				}
+			},
 			{
 				"Service Name": "Amazon EC2 ",
 				"Region": "Europe (Frankfurt)",
 				"Status": "",
 				"Service Cost": {
-					"monthly": "9.88",
+					"monthly": "9.78",
 					"upfront": "0.00",
-					"12 months": "118.56"
+					"12 months": "117.38"
 				},
 				"Properties": {
 					"Tenancy": "Shared Instances",
 					"Operating system": "Linux",
 					"Workload": "Consistent, Number of instances: 1",
 					"Advance EC2 instance": "t2.micro",
-					"Pricing strategy": "Spot Discount: -1",
+					"Pricing strategy": "On-Demand Utilization: 100 %Utilized/Month",
 					"Enable monitoring": "disabled",
 					"DT Inbound: Not selected": "0 TB per month",
 					"DT Outbound: Not selected": "0 TB per month",
