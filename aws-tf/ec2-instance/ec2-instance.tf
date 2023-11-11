@@ -54,14 +54,7 @@ resource "aws_instance" "trading_app" {
   instance_type = "t2.micro"
   key_name      = "ec2key"
   subnet_id     = module.vpc.public_subnets[0]
-
-  user_data     = <<-EOF
-#!/bin/bash
-sudo apt-get update -y
-sudo apt-get install -y docker.io
-sudo service docker start
-sudo docker run -d -p 80:80 rebelor/tradingapp:latest
-EOF
+  user_data     = file("user-data.sh")
 
   tags = {
     Name = "trading-app"
