@@ -476,5 +476,8 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 .idea/
-terraform.tfstate
+
+# Terraform
+terraform.tfstate*
 .terraform.lock.hcl
+.terraform/
