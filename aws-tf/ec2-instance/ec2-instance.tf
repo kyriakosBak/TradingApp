@@ -11,6 +11,16 @@ provider "aws" {
   region = "eu-central-1"
 }
 
+data "aws_ami" "ubuntu" {
+  most_recent = true
+  owners      = ["amazon"]
+
+  filter {
+    name   = "name"
+    values = ["ubuntu*amd64-server*"]
+  }
+}
+
 data "aws_availability_zones" "available" {
   state = "available"
 }
@@ -50,7 +60,7 @@ module "vpc" {
 }
 
 resource "aws_instance" "trading_app" {
-  ami           = "ami-06dd92ecc74fdfb36"
+  ami           = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
   key_name      = "ec2key"
   subnet_id     = module.vpc.public_subnets[0]
