@@ -1,11 +1,11 @@
-namespace TradingApp.Frontend;
+namespace TradingApp.Frontend.Services;
 
-public interface IPhraseProvider
+public interface IPhraseService
 {
     string GetPhrase();
 }
 
-public class PhraseProvider : IPhraseProvider
+public class PhraseService : IPhraseService
 {
     private readonly IEnumerable<string> _randomPhrases = new List<string>
     {

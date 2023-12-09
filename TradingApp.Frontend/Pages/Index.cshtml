@@ -5,6 +5,43 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Wisdom of the day</h1>
+    <h4 class="display-4">Wisdom of the day</h4>
     <p>@Model.GetRandomPhrase()</p>
 </div>
+
+<div class="table-container">
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Symbol</th>
+            <th>Price</th>
+            <th>Change</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var stock in @Model.GetAllStockData())
+        {
+            <tr>
+                <td>@stock.Name</td>
+                <td>@stock.Symbol</td>
+                <td>@stock.Price</td>
+                <td>@stock.PercentChange</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+<style>
+    .table-container {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .table-container th,
+    .table-container td {
+        padding: 8px 12px; /* Adjust the padding for left and right sides */
+        border-bottom: 1px solid #ccc; /* Optional: Add a bottom border for rows */
+    }
+</style>

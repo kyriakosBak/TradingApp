@@ -1,10 +1,11 @@
-using TradingApp.Frontend;
+using TradingApp.Frontend.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddScoped<IPhraseProvider, PhraseProvider>();
+builder.Services.AddScoped<IPhraseService, PhraseService>();
+builder.Services.AddScoped<IStockDataService, StockDataService>();
 
 var app = builder.Build();
 
