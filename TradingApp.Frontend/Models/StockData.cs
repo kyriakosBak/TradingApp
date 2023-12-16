@@ -2,9 +2,10 @@ namespace TradingApp.Frontend.Models;
 
 public class StockData
 {
-    public string Symbol { get; set; }
-    public string Name { get; set; }
-    public string Currency { get; set; }
-    public string Price { get; set; }
-    public string PercentChange { get; set; }
+    public int Id { get; private set; }
+    public string Symbol { get; private set; }
+    public string Name { get; private set; }
+    public string Currency { get; private set; }
+    public double Price { get; private set; }
+    public string PercentChange { get; private set; }
 }
