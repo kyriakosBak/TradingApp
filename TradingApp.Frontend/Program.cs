@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using TradingApp.Frontend.Peristence;
+using TradingApp.Frontend.Persistence;
+using TradingApp.Frontend.Repositories;
 using TradingApp.Frontend.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,11 +9,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddScoped<IPhraseService, PhraseService>();
 builder.Services.AddScoped<IStockDataService, StockDataService>();
+builder.Services.AddScoped<IStockDataRepository, DynamoDbRepository>();
 builder.Services.AddDbContext<StockDataDbContext>(options =>
-    // options.UseNpgsql("Data Sogurce=stockData.db"));
     options.UseSqlite("Data Source=StockData.db"));
 
 var app = builder.Build();
+
+// Create a get endpoint that calls a method in IStockDataService which populates the database with stock data
+app.MapGet("/populateWithFakeData", async (IStockDataService stockDataService) =>
+{
+    // await stockDataService.PopulateWithFakeData();
+});
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

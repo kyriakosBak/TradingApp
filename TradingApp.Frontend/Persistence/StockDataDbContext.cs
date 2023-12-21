@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using TradingApp.Frontend.Models;
+using TradingApp.Frontend.Domain.Models;
 
-namespace TradingApp.Frontend.Peristence;
+namespace TradingApp.Frontend.Persistence;
 
 public class StockDataDbContext : DbContext
 {
