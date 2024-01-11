@@ -1,0 +1,28 @@
+{
+    "dynamodb_stocks":[
+    {
+        "PutRequest": {
+          "Item": {
+            "Id": { "S": "0"},
+            "Symbol": { "S": "AAPL" },
+            "Name": { "S": "Apple Inc." },
+            "Currency": { "S": "USD" },
+            "Price": { "N": "196.00" },
+            "Change": { "N": "0.20" }
+            }
+        }
+    },
+    {
+        "PutRequest": {
+          "Item": {
+            "Id": { "S": "1"},
+            "Symbol": { "S": "MSFT" },
+            "Name": { "S": "Microsoft" },
+            "Currency": { "S": "USD" },
+            "Price": { "N": "372.00" },
+            "Change": { "N": "-0.18" }
+          }
+        }
+    }
+    ]
+}
