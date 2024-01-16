@@ -12,17 +12,16 @@ public class DynamoDbRepository : IStockDataRepository
     private const string TableName = "stockData";
     private readonly IAmazonDynamoDB _dynamoDb;
 
-    public DynamoDbRepository(IConfiguration config)
+    public DynamoDbRepository()
     {
         var region = Amazon.RegionEndpoint.EUCentral1; // Replace YourRegion with your AWS region
-        var credentials = new Amazon.Runtime.BasicAWSCredentials(config["Aws:AccessKeyId"], config["Aws:AccessKeySecret"]);
 
         var amazonConfig = new AmazonDynamoDBConfig
         {
             RegionEndpoint = region
         };
 
-        _dynamoDb = new AmazonDynamoDBClient(credentials, amazonConfig);
+        _dynamoDb = new AmazonDynamoDBClient(amazonConfig);
     }
 
     public async Task<IEnumerable<StockDataDto>> GetAllAsync()
